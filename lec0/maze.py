@@ -87,7 +87,7 @@ class Maze():
         for i, row in enumerate(self.walls):
             for j, col in enumerate(row):
                 if col:
-                    print("â–ˆ", end="")
+                    print("X", end="")
                 elif (i, j) == self.start:
                     print("A", end="")
                 elif (i, j) == self.goal:
@@ -124,7 +124,7 @@ class Maze():
 
         # Initialize frontier to just the starting position
         start = Node(state=self.start, parent=None, action=None)
-        frontier = StackFrontier()
+        frontier = QueueFrontier()
         frontier.add(start)
 
         # Initialize an empty explored set
